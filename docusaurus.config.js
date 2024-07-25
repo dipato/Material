@@ -75,14 +75,14 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'theorySidebar',
             position: 'left',
-            label: 'Content',
+            label: 'Theory',
           },
 
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'labsSidebar',
             position: 'left',
             label: 'Laboratory',
           },
