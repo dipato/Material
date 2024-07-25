@@ -8,19 +8,19 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'IoT_UdeA',
+  tagline: 'Internet of Things (IoT) Course',
+  //favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://dipato.github.io',
+  url: 'https://dipato.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: 'Material/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'dipatova', // Usually your GitHub org/user name.
+  organizationName: 'dipato', // Usually your GitHub org/user name.
   projectName: 'Material', // Usually your repo name.
   deploymentBranch: "gh-pages",
 
@@ -44,16 +44,16 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:
+           // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
+        //blog: {
+          //showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+       // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -65,39 +65,46 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logoudea.png',
       navbar: {
-        title: 'My Site',
+        title: 'IoT',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logoudea.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Content',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Laboratory',
           },
+          //{to: '/blog', label: 'Blog', position: 'left'},
+          //{
+            //href: 'https://github.com/facebook/docusaurus',
+            //label: 'GitHub',
+            //position: 'right',
+          //},
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
+            //title: 'Docs',
+            //items: [
+              //{
+               // label: 'Tutorial',
+               // to: '/docs/intro',
+             // },
+           // ],
           },
           {
             title: 'Community',
@@ -137,6 +144,7 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+    
 };
 
 export default config;

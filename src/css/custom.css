@@ -28,3 +28,24 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.custom-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Añadir margen inferior para separar las imágenes */
+}
+
+.custom-img {
+  width: 450px; /* Cambia esto al tamaño deseado */
+  height: auto;
+  max-width: 100%;
+}
+
+.custom-caption {
+  font-size: 0.9em; /* Tamaño de la letra más pequeño */
+  text-align: center;
+  color: #555; /* Color del texto, puedes ajustarlo según tu diseño */
+  margin-top: 5px; /* Margen superior para separar el caption de la imagen */
+}
