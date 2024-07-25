@@ -7,9 +7,10 @@ function IdealImage({ src, alt, caption, className }) {
   return (
     <div className="custom-img-container">
       <img src={src} alt={alt} className={`custom-img ${className}`} />
-      {caption && <div className="custom-caption">{caption}</div>}
+      {caption && <div className="custom-caption" dangerouslySetInnerHTML={{ __html: caption }} />}
     </div>
   );
 }
 
 export default IdealImage;
+

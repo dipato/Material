@@ -11,61 +11,83 @@ import IdealImage from '@site/src/components/IdealImage';
 # Perception Layer - Section 1
 <div style={{ textAlign: "justify" }}>
 :::note[**Objetives**]
-* Review the basic components of an IoT system.
-* Explore the basic components that make up the concept of a thing.
-* Hablar sobre el software de desarrollo a emplear
-* Investigar sobre los sistemas de desarrollo disponibles en el laboratorio.
+* Review the basic components of an IoT system
+* Explore the basic components that make up the concept of a thing
+* Discuss the development software to be used
+* Research the development systems available in the laboratory
 :::
 
-## Referencias principales
+## Main References
 
 :::info
-La mayor parte de esta clase tomará como base la lección 2 **A deeper dive into IoT** ([lección 2](https://github.com/microsoft/IoT-For-Beginners)) del curso **IoT for Beginners** ([link](https://github.com/microsoft/IoT-For-Beginners)) de Microsoft.
+For more information please go to **"A deeper dive into IoT"** ([lesson 2](https://github.com/microsoft/IoT-For-Beginners/blob/main/1-getting-started/lessons/2-deeper-dive/README.md)) from the Microsoft course **"IoT for Beginners"** ([link](https://github.com/microsoft/IoT-For-Beginners)).
 :::
 
-## Contextualización
+## Contextualization
 
-A continuación se muestra un caso tipico en el cual se aplicarán los conceptos visto a lo largo del curso. El sistema expuesto (hecho en la **Universidad de Curtin** (https://www.curtin.edu.au/)) consiste en un sistema de control en tiempo real para guiar una canica a lo largo de un laberinto de manera remota. El diagrama de bloques donde se expone la arquitectura de este sistema se muestra a continuación:
+The following is a typical case in which the concepts covered throughout the course will be applied. The system presented (by **Curtin University** (https://www.curtin.edu.au/)) consists of a real-time control system to remotely guide a marble through a maze. The block diagram illustrating the architecture of this system is shown below:
 
 <IdealImage 
     src={require('@site/static/img/IoT-example.png').default} 
-    alt="uno-r3" 
+    alt="IoT-example" 
+    className="custom-img" 
+    caption="Sorce: Curtin University" 
+/>
+
+The following video shows the operation of this system:
+
+<div style={{ textAlign: 'center' }}>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/ErS2W58StIs?si=a5B0oVeiGXwS7KaK"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+
+
+
+## Components of an IoT Application
+
+Considering the previously presented use case, we will analyze the different concepts and components needed to build an IoT application as shown in the following image:
+
+<IdealImage 
+    src={require('@site/static/img/componentes_iot_apps.png').default} 
+    alt="componentes_iot_apps.png" 
+    className="custom-img" 
+    caption="Source: Components of IoT Apps, <a href='https://github.com/microsoft/IoT-For-Beginners/blob/main/slides/lesson-2.pdf'>IoT-For-Beginners</a>." 
+/>
+
+A **Thing** refers to a device that interacts with the physical world through sensors and actuators. To learn how to develop IoT applications, the first step is to have an IoT development kit. It consists of several general-purpose IoT devices (with features that production devices do not have, such as external pins for connecting to sensors and actuators, and additional hardware for debugging support, among other things) used by developers for prototyping. There are two types of development kits:
+
+* **Single-Board Computer**
+  
+<IdealImage 
+    src={require('@site/static/img/Perception/raspberry-pi-4.jpg').default} 
+    alt="raspberry-pi-4" 
     className="custom-img" 
     caption="This Photo by Unknown Author is licensed under CC BY-SA" 
 />
 
-En el siguiente video se puede observar el funcionamiento de dicho sistema:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ErS2W58StIs?si=a5B0oVeiGXwS7KaK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Componentes de una aplicación IoT
-
-Teniendo en cuenta el caso de uso anteriormente expuesto, vamos a analizar cuales son los diferentes conceptos y componentes necesarios para construir una aplicación IoT tal y como se muestra en la siguiente imagen:
-
-<!--<Image img={require('/img/componentes_iot_apps.png')} />-->
-
-Para tal fin, revise la presentación **Components of IoT Apps** [[link]](https://github.com/microsoft/IoT-For-Beginners/blob/main/slides/lesson-2.pdf)
-
-Una **Cosa** (**Thing**) se refiere a un dispositivo que interactua con el mundo fisico a traves de sensores y actuadores. Para aprender a realizar aplicaciones para IoT el primer paso es disponer de un kit de desarrollo IoT.
-
-Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (con caracteristicas que no poseen los dispositivos de producción, tales como pines externos para conectar a sensores y actuadores y hardware adicional para soporte de debugging entre otras cosas) empleados por los desarrolladores para realizar prototipado. Existen dos tipos de kits de desarrollo:
-
-* **Computadora monoplaca (single-board Computer)**
-  
-  <!--<Image img={require('/img/sesiones/percepcion/1/raspberry-pi-4.jpg')} />-->
-
-
-* **Microcontroladores (microcontrollers)**
+* **Microcontrollers**
   
  <!-- <Image img={require('/img/sesiones/percepcion/1/uno-r3.jpg')} />-->
+ <IdealImage 
+    src={require('@site/static/img/Perception/uno-r3.jpg').default} 
+    alt="raspberry-pi-4" 
+    className="custom-img" 
+    caption="This Photo by Unknown Author is licensed under CC BY-SA" 
+/>
 
-## Placas de desarrollo disponibles
-
+## Available development boards
 
 <Tabs groupId="placas">
   <TabItem value="arduino_uno" label="Arduino UNO">
         
-        A continuación se muestra el **Arduino UNO**:
+        The following shows the **Arduino UNO**:
         
         <IdealImage 
             src={require('@site/static/img/Perception/uno-r3.jpg').default} 
@@ -74,18 +96,20 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
             caption="This Photo by Unknown Author is licensed under CC BY-SA" 
         />
                     
-        La siguiente tabla resume las principales caracteristicas de la placa Arduino UNO disponible en el laboratorio:
+        The following table summarizes the main features of the Arduino UNO board available in the laboratory:
+
+        <div className="table-container">
 
         |Item |Arduino UNO|
         |---|---|
-        |Microcontrolador |ATmega328P (Atmel)|
-        |Microprocesador |ATMega 16U2|
+        |Microcontroller |ATmega328P (Atmel)|
+        |Microprocessor |ATMega 16U2|
         |I/O Voltage |5 V|
         |Input voltage (nominal) |7 - 12 V (Power jack)|
         |Power jack | yes|
-        |Voltaje de alimentación (Pin)||
-        |Voltaje de Entradas/Salidas |5 V|
-        |Voltaje de referencia en el ADC| 5V|
+        |Power supply (Vin)||
+        |Input/Output Voltage |5 V|
+        |ADC reference voltage| 5V|
         |DC Current per I/O Pin| 20 mA|
         |Built-in LED Pin |13|
         |Digital I/O Pins |14 (I/O)|
@@ -98,12 +122,14 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
         |WIFI| no|
         |Bluetooth| no|
         |Programmable | Arduino IDE, Micropython, VS Code|
-        |Marca | Arduino|
+        |Brand | Arduino|
+
+        </div>
 
   </TabItem>
   <TabItem value="esp8266" label="ESP8266">
 
-        La siguiente imagen muestra una placa **NodeMCU ESP8266**:
+        The following shows the board **NodeMCU ESP8266**:
 
          <IdealImage 
             src={require('@site/static/img/Perception/NodeMcuV3_1.jpg').default} 
@@ -112,18 +138,18 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
             caption="This Photo by Unknown Author is licensed under CC BY-SA" 
         />
 
-        La siguiente tabla resume las principales caracteristicas de la placa ESP8266 disponible en el laboratorio:
+        The following table summarizes the main features of the ESP8266 board available in the laboratory:
 
         |Item |ESP8266|
         |---|---|
-        |Microcontrolador |SoC ESP9266EX|
-        |Microprocesador |Tensilica's L106 Diamond series 32-bit|
+        |Microcontroller |SoC ESP9266EX|
+        |Microprocessor |Tensilica's L106 Diamond series 32-bit|
         |I/O Voltage |5 V|
         |Input voltage (nominal) |5 - 12 V (VIN, VCC)|
         |Power jack | no|
-        |Voltaje de alimentación (Pin)|5 V (VIN)|
-        |Voltaje de Entradas/Salidas |3.3 V|
-        |Voltaje de referencia en el ADC|3.3 V|
+        |Power supply (Vin)|5 V (VIN)|
+        |Input/Output Voltage |3.3 V|
+        |ADC reference Voltage|3.3 V|
         |DC Current per I/O Pin| 12 mA|
         |Built-in LED Pin |---|
         |Digital I/O Pins |9 (GPIO)|
@@ -136,12 +162,12 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
         |WIFI| IEEE 802.11 b/g/n|
         |Bluetooth| no|
         |Programmable | Arduino IDE, Micropython, VS Code|
-        |Marca | Ai-Thinker|
+        |Brand | Ai-Thinker|
   </TabItem>
 
 <TabItem value="esp32" label="ESP32">
 
-        La siguiente imagen muestra una placa **ESP32**:
+        The following shows the board **ESP32**:
 
         <IdealImage 
             src={require('@site/static/img/Perception/esp32.png').default} 
@@ -150,18 +176,18 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
             caption="This Photo by Unknown Author is licensed under CC BY-SA" 
         />
 
-        La siguiente tabla resume las principales caracteristicas de la placa ESP32 disponible en el laboratorio:
+        The following table summarizes the main features of the ESP32 board available in the laboratory:
 
         |Item |ESP32|
         |---|---|
-        |Microcontrolador |SoC ESP32|
-        |Microprocesador |Xtensa single-/dual-core 32-bit LX6|
+        |Microcontroller |SoC ESP32|
+        |Microprocessor |Xtensa single-/dual-core 32-bit LX6|
         |I/O Voltage |5 V|
         |Input voltage (nominal) |---|
         |Power jack | no|
-        |Voltaje de alimentación (Pin)|3.3 V (VIN)|
-        |Voltaje de Entradas/Salidas |3.3 V|
-        |Voltaje de referencia en el ADC| |
+        |Power supply (Vin)|3.3 V (VIN)|
+        |Input/Output Voltage |3.3 V|
+        |ADC reference voltage| |
         |DC Current per I/O Pin| 12 mA|
         |Built-in LED Pin ||
         |Digital I/O Pins |24 (GPIO - Algunos pines solo como entrada)|
@@ -174,12 +200,12 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
         |WIFI| IEEE 802.11 b/g/n|
         |Bluetooth| yes|
         |Programmable | Arduino IDE, Micropython, VS Code|
-        |Marca | Ai-Thinker|
+        |Brand | Ai-Thinker|
 </TabItem>
 
 <TabItem value="arduino_nano" label="ARDUINO NANO 33 BLE Sense Lite">
 
-    El Arduino Nano 33 BLE Sense ([datasheet](https://docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf)) esta basado en el microcontrolador nRF52840 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_MCU-nRF52840_PS_v1.1.pdf))
+    The Arduino Nano 33 BLE Sense board ([datasheet](https://docs.arduino.cc/resources/datasheets/ABX00031-datasheet.pdf)) is based in the microcontroller nRF52840 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_MCU-nRF52840_PS_v1.1.pdf)).
      
     <IdealImage 
         src={require('@site/static/img/Perception/arduino_nano33_ble.jpg').default} 
@@ -188,11 +214,11 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
         caption="This Photo by Unknown Author is licensed under CC BY-SA" 
     />
 
-     La siguiente tabla resume las especificaciones tecnicas del Arduino Nano 33 BLE Sense:
+     The following table summarizes the main features of the Arduino Nano 33 BLE Sense board available in the laboratory:
 
      |Item |Arduino Nano 33 BLE Sense|
     |---|---|
-    |Microcontrolador|	nRF52840 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_MCU-nRF52840_PS_v1.1.pdf))|
+    |Microcontroller|	nRF52840 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_MCU-nRF52840_PS_v1.1.pdf))|
     |Operating Voltage|	3.3V|
     |Input Voltage (limit)|	21V|
     |DC Current per I/O Pin|	15 mA|
@@ -215,12 +241,12 @@ Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (co
     |Gesture, light, proximity|	APDS9960 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_Sense_av02-4191en_ds_apds-9960.pdf))|
     |Barometric pressure	|LPS22HB ([datasheet](https://content.arduino.cc/assets/Nano_BLE_Sense_lps22hb.pdf))|
     |Temperature, humidity|	HTS221 ([datasheet](https://content.arduino.cc/assets/Nano_BLE_Sense_HTS221.pdf))|
-    |Tamaño (length × width) |45 mm × 18 mm|
+    |Size (length × width) |45 mm × 18 mm|
 
-    A diferencia de los otros sistemas disponibles en el laboratorio, el Arduino Nano 33 BLE Sense tiene algunos sensores integrados que pueden ser usados para soluciones IoT.
+    Unlike the other systems available in the laboratory, the Arduino Nano 33 BLE Sense has some integrated sensors that can be used for IoT solutions.
 
     
-    > **Importante**: Hay diferentes versiones del Arduino Nano 33 BLE Sense (conocidas como "revisions": NANO 33 BLE SENSE y NANO 33 BLE SENSE REV2). En ambas se usa el nRF52840 como procesador, pero los sensores son diferentes. Por lo tanto, es importante tener cuidado al elegir la versión correcta con la tarjeta con la que se va a trabajar en el Arduino IDE. 
+    > **Important**: There are different versions of the Arduino Nano 33 BLE Sense (known as "revisions": NANO 33 BLE SENSE and NANO 33 BLE SENSE REV2). Both use the nRF52840 as the processor, but the sensors are different. Therefore, it is important to be careful when choosing the correct version with the board you will be working with in the Arduino IDE.
     
 </TabItem>
 </Tabs>
